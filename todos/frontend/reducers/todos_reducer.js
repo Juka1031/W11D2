@@ -1,5 +1,5 @@
 
-import { RECEIVE_TODO, RECEIVE_TODOS } from "../actions/todo_actions";
+import { RECEIVE_TODO, RECEIVE_TODOS, REMOVE_TODO } from "../actions/todo_actions";
 // import {  } from "../actions/todo_actions";
 
 
@@ -29,14 +29,18 @@ const todosReducer = (state = initialState ,action) =>{
     switch(action.type){
 
         case RECEIVE_TODOS:
-            actions.todos.forEach( object => {
+            action.todos.forEach( object => {
                 nextState[object.id] = object
             })
             return nextState;
 
         case RECEIVE_TODO:
             nextState[action.todo.id] = action.todo 
-            return  nextState
+            return  nextState;
+        
+        case REMOVE_TODO:
+            delete nextState[action.todo.id];
+            return nextState;
 
         default:
             return state;

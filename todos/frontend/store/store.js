@@ -7,6 +7,7 @@ const configureStore = (preloadedState = {}) => {
 
 
     return createStore(rootReducer, preloadedState);
+    
 };
 
 export default configureStore;
