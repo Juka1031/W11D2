@@ -20,12 +20,12 @@ const initialState = {
   
 
 
-
+//why are reducers pure function? does not mutate any local variables
 const todosReducer = (state = initialState ,action) =>{
 
-    Object.freeze(state);
-    const nextState = Object.assign({},state);
-
+    Object.freeze(state); //should never mutate state so freeze ensures that
+    const nextState = Object.assign({},state);//Object.assign makes a shallow copy of nextState so you can mutate the new copy
+    debugger
     switch(action.type){
 
         case RECEIVE_TODOS:
