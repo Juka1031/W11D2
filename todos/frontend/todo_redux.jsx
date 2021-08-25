@@ -5,7 +5,7 @@ import App from "./components/app"
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Root from './components/root'
-import {allTodos} from './reducers/selectors'
+import {allTodos, stepsByTodoId} from './reducers/selectors'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.receiveSteps = receiveSteps;
     window.removeStep = removeStep;
     window.allTodos = allTodos;
+    window.stepsByTodoId = stepsByTodoId;
 
     const root = document.getElementById("root");   
     ReactDOM.render(<Root store = {store} />, root)

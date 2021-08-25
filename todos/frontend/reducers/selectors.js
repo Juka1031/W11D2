@@ -4,3 +4,10 @@ export const allTodos = (state) => {
     return todos;
 };
 
+export const stepsByTodoId = (state, todoId) => {
+    const steps = Object.values(state.todos).filter(todo => todo.id === todoId)
+
+
+    return steps
+}
+
