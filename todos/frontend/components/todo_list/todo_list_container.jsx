@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { removeTodo } from "../../actions/todo_actions";
 import { allTodos } from "../../reducers/selectors";
 import TodoList from "./todo_list";
 
@@ -9,7 +10,8 @@ const mSTP = (state) => ({
 })
 
 const mDTP = (dispatch) => ({
-    recieveTodo: todo => dispatch(recieveTodo(todo))
+    receiveTodo: todo => dispatch(receiveTodo(todo)),
+    removeTodo: todo => dispatch(removeTodo(todo))
 
 })
 
